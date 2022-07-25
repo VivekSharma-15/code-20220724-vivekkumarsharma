@@ -67,9 +67,5 @@ print('total number of overweight: ', count)
 with open(os.path.join(sys.path[0], "input.json"), "w") as outfile:
     json.dump(data, outfile)
 
-#print('updated json')
-#print(data)
-
-
 # Closing file
 f.close()
