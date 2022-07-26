@@ -37,25 +37,25 @@ for record in data:
     #calculating bmi
     bmi = calc_bmi(record['HeightCm'], record['WeightKg'])
     
-    #intialise the k equals to the length of list
-    k=len(lst)-1
+    #getting the max index of list
+    index=len(lst)-1
 
     #checking for new records     
     if (len(record)) == 3:
 
         #add new columns
-        for j in lst:            
+        for max_of_previous_range in lst:            
             
             #checking for all the ranges except the lowest
-            if bmi>=j:                    
-                record.update(new_col(k))
+            if bmi >= max_of_previous_range:                    
+                record.update(new_col(index))
                 break
             
             #for the case where range is 18.4 and below
-            if bmi<lst[k-1]:
-                record.update(new_col(k))
+            if bmi<lst[index-1]:
+                record.update(new_col(index))
 
-            k=k-1
+            index=index-1
 
     #count overweight person        
     if 25<= bmi <= 29.9:
