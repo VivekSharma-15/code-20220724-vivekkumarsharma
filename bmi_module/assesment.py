@@ -3,7 +3,7 @@ from os import sys
 import json
 from table1 import df
 
-count = 0
+count = 0  
 lst = []
 j=0
 
@@ -25,7 +25,6 @@ for range in df['BMI Range (kg/m2)']:
 lst.sort(reverse=True)
 
 # Opening JSON file
-#f = open('input.json')
 f = open(os.path.join(sys.path[0], "input.json"), "r")
    
 # loading the json data
